@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'AmaranthRegular';
+    src: url('../fonts/Amaranth-webfont.eot');
+    src: url('../fonts/Amaranth-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Amaranth-webfont.woff') format('woff'),
+         url('../fonts/Amaranth-webfont.ttf') format('truetype'),
+         url('../fonts/Amaranth-webfont.svg#AmaranthRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AmaranthBold';
+    src: url('../fonts/Amaranth-Bold-webfont.eot');
+    src: url('../fonts/Amaranth-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Amaranth-Bold-webfont.woff') format('woff'),
+         url('../fonts/Amaranth-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Amaranth-Bold-webfont.svg#AmaranthBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+	font: 18px/27px 'AmaranthRegular', Arial, sans-serif;
+}
+
+
+body{
+	width:100%;
+	max-width:320px;
+	margin:auto;
+}
+
+h1{
+	font-family:'AmaranthBold', Arial, sans-serif;
+	font-size:30px;
+	color:#faf6f0;
+	line-height:75px;
+	padding-top:10px;
+}
+
+
+header{
+	background:#e7e0d5;
+	width:100%;
+	height:90px;
+}
+
+#question{
+	background-image:url(../images/question.png);
+	background-size:100%;
+	width:6.8%; /*22px*/
+	padding-top:6.8%;
+	max-width:60px;
+	max-height:60px;
+	float:right;
+	margin-right:5px;
+	margin-top:5px;
+}
+
+section{
+	background:#5a5158;
+	width:100%;
+}
+
+h2{
+	font-family:'AmaranthRegular', Arial, sans-serif;
+	font-size:16px;
+	color:#fdf9f4;
+	line-height:30px;
+	text-align:center;
+}
+
+#selection{
+	overflow:auto;
+	width:93.75%;
+	height:320px;
+	margin:10px 3.125%;
+}
+
+#CategoryList{
+	background:#f3eadb;
+}
+
+.Icon{
+	background-image:url(../images/icon.jpg);
+	width:60px;
+	height:60px;
+	float:left;
+	margin-right:10px;
+}
+
+#CategoryList li{
+	font-family:'AmaranthRegular', Arial, sans-serif;
+	font-size:25px;
+	line-height:60px;
+	color:#6f676d;
+}
+
+#CategoryList li a{
+	color:#6f676d;
+	text-decoration:none;
+}
+
+#CategoryList li:nth-child(odd){
+	background:#e9decc;
+}
+
+#TempIcon{
+	background-image:url(../images/temp.jpg);
+}
+#VolIcon{
+	background-image:url(../images/volume.jpg);
+}
+
+
+#tempHead{
+	background:url(../images/thermo.png);
+	width:57px;
+	height:54px;
+	float:left;
+	margin:10px;
+}
+
+form{
+	margin:10px 3.125%;
+}
+
+input{
+	display: block;
+	clear: left;
+	float: left;
+	padding:10px;
+	width:123px;
+	height:42px;
+	background:url(../images/input.png) no-repeat;
+	border-style:none;
+	font-size:32px;
+	line-height:42px;
+	font-family:'Roboto', Arial, sans-serif;
+	color:#5d565c;
+	margin-bottom:20px;
+}
+.select{
+	position:absolute;
+	padding:10px;
+	width:123px;
+	height:43px;
+	background:url(../images/select.png);
+	font-size:25px;
+	color:#fefdfb;
+	cursor:pointer;
+}
+	
+
+/* MOBILE STYLES: PORTRAIT */
+@media only screen and (max-width: 479px){
+	
+	
+}
+
+/* MOBILE STYLES: LANDSCAPE */
+@media only screen and (min-width: 480px) and (max-width: 767px){
+	
+	
+}
+
+/* TABLET STYLES: PORTRAIT */
+@media only screen and (min-width: 768px) and (max-width: 959px){
+	
+	
+}
+
+/* TABLET STYLES: LANDSCAPE */
+@media only screen and (min-width: 960px) and (max-width: 1024px){
+	
+	
+}
+
+/* DESKTOP STYLES */
+@media only screen and (min-width: 1025px){
+	
+	
+}
