@@ -135,12 +135,13 @@ h2{
 }
 
 form{
+	position:relative;
 	margin:20px 3.125%;
 }
 
 input{
 	display: block;
-	clear: left;
+	/*clear: left;*/
 	float: left;
 	padding:8px 10px;
 	width:123px;
@@ -155,6 +156,9 @@ input{
 }
 .select{
 	position:absolute;
+	right:0px;
+	/*display:block;*/
+	float:right;
 	padding:10px;
 	width:123px;
 	height:43px;
@@ -220,10 +224,10 @@ select{
 #modalBox{
 	display:none;
 	height:300px;
-	width:300px;
+	width:260px;
 	position:absolute;
 	z-index:9998;
-	margin:auto;
+	margin:3.125%;
 	color:black;
 	background-color:#333;
 	border:0px solid #444;
