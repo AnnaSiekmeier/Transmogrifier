@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" / >
+        <title>Transmogrifier ~ Volume</title>
+        
+        <link href="css/reset.css" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>-->
+        <!--<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>-->
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+        <script src="js/custom-form-elements.js" type="text/javascript"></script>
+    
+    <style>
+	</style>
+    
+    
+    </head>
+
+    <body class="category">
+    
+        <header class="categoryHead">
+        	<div id="tempHead"></div>
+        	<h1>VOLUME</h1>
+        </header>
+        
+        <section>
+            <form action="">
+            <input id="Input1" type="number" name="value">          
+            <select id="Unit1" class="styled" name="vol1">
+                <option value="Teaspoons" selected>Teaspoons</option>
+                <option value="Tablespoons">Tablespoons</option>
+                <option value="Cups" >Cups</option>
+                <option value="Pints" >Pints</option>
+                <option value="Quarts" >Quarts</option>
+                <option value="Gallons" >Gallons</option>
+                <option value="Liters" >Liters</option>
+                <option value="FlOz" >Fl. Oz.</option>
+            </select>
+            <div id="equals"></div>
+            <input id="Input2" type="number" name="value">      
+            <select id="Unit2" class="styled" name="vol2">
+                <option value="Teaspoons">Teaspoons</option>
+                <option value="Tablespoons" selected>Tablespoons</option>
+                <option value="Cups">Cups</option>
+                <option value="Pints" >Pints</option>
+                <option value="Quarts" >Quarts</option>
+                <option value="Gallons" >Gallons</option>
+                <option value="Liters" >Liters</option>
+                <option value="FlOz" >Fl. Oz.</option>
+            </select>
+            </form> 
+            
+            <div id="return"><a href="index.html"></a></div>
+                        
+        </section>
+        
+        <!--
+        1 liter ≈ 0.26 gallons ≈ 33.814 fl oz
+        1 gallon = 4 quarts = 8 pints = 16 cups = 256 tablespoons = 768 teaspoons = 128 fl oz ≈ 3.785 liters
+        1 quart = 2 pints = 4 cups = 64 tablespoons = 192 teaspooons = 32 fl oz
+        1 pint = 2 cups = 32 tablespoons = 96 teaspoons = 16 fl oz
+        1 cup = 16 tablespoons = 48 teaspoons = 8 fl oz
+        1 tablespoon = 3 teaspoons = .5 fl oz
+        -->
+
+    </body>
+    
+    <script>
+	
+	//var activeInput = null;
+	
+	var topVolumeArray = new Array();
+	
+	topVolumeArray[0]= "Teaspoons";
+	topVolumeArray[1]= "Tablespoons";
+	topVolumeArray[2]= "Cups";
+	topVolumeArray[3]= "Pints";
+	topVolumeArray[4]= "Quarts";
+	topVolumeArray[5]= "Gallons";
+	topVolumeArray[6]= "Liters";
+	topVolumeArray[7]= "FlOz";
+	
+	var bottomVolumeArray = new Array();
+	
+	bottomVolumeArray[0]= "Teaspoons";
+	bottomVolumeArray[1]= "Tablespoons";
+	bottomVolumeArray[2]= "Cups";
+	bottomVolumeArray[3]= "Pints";
+	bottomVolumeArray[4]= "Quarts";
+	bottomVolumeArray[5]= "Gallons";
+	bottomVolumeArray[6]= "Liters";
+	bottomVolumeArray[7]= "FlOz";
+	
+	
+	$('#Input1').change(function() {
+		activeInput = '#Input1';
+	   if(isNaN($('#Input1').val())){
+			alert('Please enter a number.');
+	   } else {
+		   PerformCalculation();
+	   };
+	 });
+	 
+	 $('#Input2').change(function() {
+		 activeInput = '#Input2';
+	   if(isNaN($('#Input2').val())){
+			alert('Please enter a number.');
+	   } else {
+		   PerformCalculation2();
+	   };
+	 });
+	 
+	 $('#Unit1').change(function() {
+		   PerformCalculation2();
+	 });
+	 
+	 $('#Unit2').change(function() {
+		   PerformCalculation();
+	 });
+	 
+	var convertThis;
+	var convertedValue;
+
+//////////// CALCULATION ////////////
+	function PerformCalculation(){
+
+		convertThis = ($('#Input1').val());
+
+		if($('#Input1').val() == ""){
+			$('#Input2').val("")
+		}
+		else for (i=0;i<topVolumeArray.length;i++){
+			if($('#Unit1').val() == topVolumeArray[i]){
+				console.log('unit1: '+topVolumeArray[i]);
+				for (j=0;j<bottomVolumeArray.length;j++){
+					if($('#Unit2').val() == bottomVolumeArray[j]){
+						console.log('unit2: '+bottomVolumeArray[j]);
+						eval(topVolumeArray[i]+"To"+bottomVolumeArray[j]+"()");
+						$('#Input2').val(convertedValue)
+						
+						//window[topVolumeArray[i]]["To"][bottomVolumeArray[j]]();
+					};
+				};
+			};
+		};
+	};
+	
+///////////// BACKWARDS CALCULATION /////////
+	function PerformCalculation2(){
+
+		convertThis = ($('#Input2').val());
+
+		if($('#Input2').val() == ""){
+			$('#Input1').val("")
+		}
+		else for (j=0;j<bottomVolumeArray.length;j++){
+			if($('#Unit2').val() == bottomVolumeArray[j]){
+				console.log('unit2: '+bottomVolumeArray[j]);
+				for (i=0;i<topVolumeArray.length;i++){
+					if($('#Unit1').val() == topVolumeArray[i]){
+						console.log('unit1: '+topVolumeArray[i]);
+						eval(bottomVolumeArray[j]+"To"+topVolumeArray[i]+"()");
+						$('#Input1').val(convertedValue)
+						
+						//window[topVolumeArray[i]]["To"][bottomVolumeArray[j]]();
+					};
+				};
+			};
+		};
+	};
+	
+	
+///////////// EQUATIONS ///////////////
+	function TeaspoonsToCups(){
+		console.log('Teaspoons to Cups');
+		convertedValue = (Number(convertThis) + 15);
+	};
+	function TeaspoonsToTablespoons(){
+		console.log('Teaspoons to Tablespoons');
+		convertedValue = (Number(convertThis) + 20);
+	};
+	
+	function TablespoonsToCups(){
+		console.log('Tablespoons to Cups');
+		convertedValue = (Number(convertThis) + 25);
+	};
+	
+	function CupsToCups(){
+		console.log('Cups to Cups');
+		convertedValue = (Number(convertThis));
+	};
+	
+	
+
+	
+	</script>
+
+</html>

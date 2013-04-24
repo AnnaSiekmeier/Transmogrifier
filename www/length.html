@@ -5,7 +5,7 @@
     
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width" / >
-        <title>Transmogrifier ~ Temperature</title>
+        <title>Transmogrifier ~ Length</title>
         
         <link href="css/reset.css" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
@@ -25,26 +25,26 @@
     <body class="category">
     
         <header class="categoryHead">
-        	<div id="head">
-                <div id="tempHead"></div>
-                <h1>TEMPERATURE</h1>
-            </div>
+        	<div id="tempHead"></div>
+        	<h1>LENGTH</h1>
         </header>
         
         <section>
             <form action="">
             <input id="Input1" type="number" name="value">          
             <select id="Unit1" class="styled" name="temp1">
-                <option value="Fahrenheit" selected>Fahrenheit</option>
-                <option value="Celcius">Celcius</option>
-                <option value="Kelvin" >Kelvin</option>
+                <option value="Feet" selected>Feet</option>
+                <option value="Inches">Inches</option>
+                <option value="Meters" >Meters</option>
+                <option value="Miles" >Miles</option>
             </select>
             <div id="equals"></div>
             <input id="Input2" type="number" name="value">      
             <select id="Unit2" class="styled" name="temp2">
-                <option value="Fahrenheit">Fahrenheit</option>
-                <option value="Celcius" selected>Celcius</option>
-                <option value="Kelvin" >Kelvin</option>
+                <option value="Feet">Feet</option>
+                <option value="Inches">Inches</option>
+                <option value="Meters" selected>Meters</option>
+                <option value="Miles">Miles</option>
             </select>
             </form> 
             
@@ -53,12 +53,9 @@
         </section>
         
         <!--
-        C = (°F - 32) / 1.8
-        C = °K - 273
-        F = (1.8 * °C) + 32
-        F = 1.8 (°K - 273) + 32
-        K = °C + 273
-        K = ((°F - 32) / 1.8) + 273
+        1 meter ≈ 3.26 feet
+        1 kilometer ≈ 0.62 miles
+        
         -->
 
     </body>

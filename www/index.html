@@ -24,22 +24,27 @@
 
     <body>
     
-        <header>
-             <div id="question"></div>
+        <div id="question"></div>
+    <!-- MODAL BOX -->
+        <div id="modalMask" style="display:none;">
+            <div id="modalBox">
+                <div class="CloseImg" onClick="hidebox('basic-modal-content');">
+                    <img src='images/x.png' alt='' />
+                </div>
+                <h4>trans·mog·ri·fy</h4>
+                <div id="pronounciation"></div>
+                <h5>VERB</h5><p>1. to transform, esp. in a surprising or magical manner.<br>
+                2. to convert measurement units in the blink of an eye.</p>
+                <h5>SYNONYMS</h5><p>transform - alter - change - transmute - convert</p>
+            </div>
+        </div>
+        <!--  -->
+        
+            <header>     
         	 <!--<h1>TRANSMOGRIFIER</h1>-->
         </header>
         
-        <!-- MODAL BOX -->
-        <div id="modalBox">
-            <div class="CloseImg" onClick="hidebox('basic-modal-content');">
-                <img src='images/x.png' alt='' />
-            </div>
-            <h1>trans·mog·ri·fy</h1>
-            <div id="pronounciation"></div>
-            <p>Verb<br>Transform, esp. in a surprising or magical manner.</p>
-            <p>Synonyms<br>transform - alter - change - transmute - metamorphose</p>
-        </div>
-        <!--  -->
+        
         
         <section>
         	<h2>Select a category and let the magic begin.</h2>
@@ -78,24 +83,37 @@
 <!-- Reveal Java -->
         <script type="text/javascript">
 		$('#question').on('tap', function(event){
-			alert("Tapped!");
-			event.preventDefault();
-				//showbox();
-		});
-		
-		function showbox() {
-			$('#modalBox').style.display = "block";
-		}
-		
-		$('#modalBox').on('tap', function(event){
 			//alert("Tapped!");
 			event.preventDefault();
-				//hidebox();
+				showbox('modalMask');
 		});
 		
-		function hidebox() {
-			$('#modalBox').style.display = "none";
+		function showbox(box) {
+			//$('#modalMask').style.display = "block";
+			var box=document.getElementById(box);
+			if (box.style.display == "block") box.style.display = "none";
+				  else box.style.display = "block";
 		}
+		
+		$('#modalMask').on('tap', function(event){
+			event.preventDefault();
+			if($(event.target).is('#pronounciation')) {
+				//play the pronounciation
+				alert('"Trans·mog·ri·fy"');
+			}
+			else if($(event.target).is('h4')) {
+			}
+			else if($(event.target).is('h5')) {
+			}
+			else if($(event.target).is('p')) {
+			}
+			else if($(event.target).is('#modalBox')) {
+			}
+			else{
+				//alert("closing the box");
+				showbox('modalMask');
+			}
+		});
 		
 		</script>
         

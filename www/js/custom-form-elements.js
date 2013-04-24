@@ -23,7 +23,7 @@ Visit http://ryanfait.com/ for more information.
 
 */
 
-var selectWidth = "143";
+var selectWidth = "123"; /*143px*/
 
 
 /* No need to change anything after this */

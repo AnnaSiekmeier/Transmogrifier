@@ -9,15 +9,15 @@
         A conversion calculator for all your favorite units of measurement.
     </description>
 
-    <author href="http://reroutemaps.com" email="anna@reroutemaps.com">
+    <author href="http://annasiekmeier.com" email="anna@reroutemaps.com">
         AnnaSiekmeier
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
 
     <preference name="phonegap-version" value="2.1.0" />
-    <preference name="orientation"      value="default" />
-    <preference name="target-device"    value="universal" />
+    <preference name="orientation"      value="portrait" />
+    <preference name="target-device"    value="handset" />
     <preference name="fullscreen"       value="false" />
 
     <icon src="icon.png" />
