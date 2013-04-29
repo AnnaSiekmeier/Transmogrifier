@@ -93,9 +93,10 @@ h2{
 #selection{
 	overflow:auto;
 	width:93.75%;
-	height:320px; /*330px*/
+	height:325px; /*330px*/
 	margin:5px 3.125%;
 	border: solid 1.5px #E3D4BD;
+	box-shadow:inset 15px #000;
 }
 
 #CategoryList{
