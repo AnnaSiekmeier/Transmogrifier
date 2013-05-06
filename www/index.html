@@ -14,32 +14,41 @@
         <!--<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>-->
         <script src="js/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
-        <script src="js/custom-form-elements.js" type="text/javascript"></script>
+  		<script type="text/javascript" src="js/pagefade.js"></script>
+        
+    	<script language="javascript" type="text/javascript">
+			
+		 </script>
     
     <style>
 	</style>
     
     
     </head>
-
-    <body>
+	
     
+    <body>
+        <p id="whoops">The Transmogrifier is currently only available for smartphones.<br/>Please install on your phone or resize your browser window.</p>
+        
         <div id="question"></div>
     <!-- MODAL BOX -->
         <div id="modalMask" style="display:none;">
             <div id="modalBox">
-                <h4>trans·mog·ri·fy</h4>
-                <div id="pronounciation"></div>
-                <h5>VERB</h5><p>1. to transform, esp. in a surprising or magical manner.<br>
-                2. to convert measurement units in the blink of an eye.</p>
-                <h5>SYNONYMS</h5><p>transform - alter - change - transmute - convert</p>
+            	<div id="modalContent">
+                    <h4>trans·mog·ri·fy</h4>
+                    <div id="pronounciation"></div>
+                    <h5>VERB</h5><p>1. to transform, esp. in a surprising or magical manner.<br>
+                    2. to convert measurement units in the blink of an eye.</p>
+                    <h5>SYNONYMS</h5><p>transform - alter - change - transmute - convert</p>
+                    <span id="sound"></span>
+                </div>
             </div>
         </div>
         <!--  -->
         
             <header>     
         	 <!--<h1>TRANSMOGRIFIER</h1>-->
-        </header>
+        	</header>
         
         
         
@@ -47,12 +56,13 @@
         	<h2>Select a category and let the magic begin.</h2>
             
             <div id="selection">
+            	<div id="shadow"></div>
             	<ul id="CategoryList">
-                	<li><a href="temp.html">
+                	<li><a href="temp.html" class="transition">
                     	<div class="Icon" id="TempIcon"></div>
                         <h3>TEMPERATURE</h3></a>
                     </li>
-                	<li><a href="volume.html">
+                	<li><a href="volume.html" class="transition">
                     	<div class="Icon" id="VolIcon"></div>
                         <h3>VOLUME</h3></a>
                     </li>
@@ -82,21 +92,70 @@
 		$('#question').on('tap', function(event){
 			//alert("Tapped!");
 			event.preventDefault();
-				showbox('modalMask');
+				showbox();
+				//growbox();
+				setTimeout(growbox,00);
+				
 		});
 		
-		function showbox(box) {
-			//$('#modalMask').style.display = "block";
-			var box=document.getElementById(box);
-			if (box.style.display == "block") box.style.display = "none";
-				  else box.style.display = "block";
+		function showbox() {
+			$('#modalMask').fadeToggle(300);
+			//var box=document.getElementById('modalMask');	
+			//if (box.style.display == "block") box.style.display = "none";
+				//  else box.style.display = "block";
+		}
+		
+		function growbox() {
+		
+			$('#modalBox').animate({
+				height: [250, 'swing'],
+				width: ['81.25%', 'swing'],
+				marginTop:100,
+				marginRight: '3.125%'
+				}, 500, function() {
+				// Animation complete.
+					$('#modalContent').fadeIn(500);
+			});
+
+			/*$('#modalBox').toggle(function() {
+					$('#modalBox').animate({height: '250'});
+				}, function() {
+					$('#modalBox').animate({height: '0'});
+				});
+			*/
+		}
+		
+		function get_random()
+		{
+			var ranNum= Math.floor(Math.random()*4);
+			return ranNum;
+		}
+		
+		function playSound(soundfile) {
+				 //alert('play sound!');
+				 document.getElementById("sound").innerHTML=
+				 "<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
 		}
 		
 		$('#modalMask').on('tap', function(event){
 			event.preventDefault();
 			if($(event.target).is('#pronounciation')) {
 				//play the pronounciation
-				alert('"Trans·mog·ri·fy"');
+				//alert('"Trans·mog·ri·fy"');
+				
+				var whichClip=get_random();
+		
+				var clip=new Array(5)
+				 clip[0]="audio/Melissa.mp3";
+				 clip[1]="audio/Jake.mp3";
+				 clip[2]="audio/Shawn.mp3";   
+				 clip[3]="audio/Mark.mp3";
+			  
+			   //alert(clip[whichClip]);
+			   
+				playSound(clip[whichClip]);
+			}
+			/*else if($(event.target).is('#modalBox')) {
 			}
 			else if($(event.target).is('h4')) {
 			}
@@ -104,13 +163,32 @@
 			}
 			else if($(event.target).is('p')) {
 			}
-			else if($(event.target).is('#modalBox')) {
-			}
+			else if($(event.target).is('#modalContent')) {
+			}*/
 			else{
 				//alert("closing the box");
-				showbox('modalMask');
+				shrinkbox();
+				//showbox();
+				setTimeout(showbox,300);
+				event.stopPropagation();
 			}
 		});
+		
+		function shrinkbox() {
+		
+			$('#modalContent').fadeOut(200, function() {
+			
+				$('#modalBox').animate({
+				height: [0, 'swing'],
+				width: [0, 'swing'],
+				marginTop:10,
+				marginRight:10
+				}, 300
+				);
+				
+			});
+		}
+		 
 		
 		</script>
         
