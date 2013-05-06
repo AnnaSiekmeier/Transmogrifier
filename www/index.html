@@ -151,11 +151,11 @@
 				 clip[2]="audio/Shawn.mp3";   
 				 clip[3]="audio/Mark.mp3";
 			  
-			   //alert(clip[whichClip]);
+			   alert("play "+clip[whichClip]);
 			   
 				playSound(clip[whichClip]);
 			}
-			/*else if($(event.target).is('#modalBox')) {
+			else if($(event.target).is('#modalBox')) {
 			}
 			else if($(event.target).is('h4')) {
 			}
@@ -164,13 +164,13 @@
 			else if($(event.target).is('p')) {
 			}
 			else if($(event.target).is('#modalContent')) {
-			}*/
+			}
 			else{
 				//alert("closing the box");
 				shrinkbox();
 				//showbox();
 				setTimeout(showbox,300);
-				event.stopPropagation();
+				//event.stopPropagation();
 			}
 		});
 		
