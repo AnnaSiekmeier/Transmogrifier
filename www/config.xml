@@ -30,6 +30,6 @@
     <icon src="res/icon/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
 	<icon src="res/icon/icon-512.png"            gap:platform="ios"        width="512" height="512" />
    
-    <gap:splash src="res/screen/screen-iphone-portrait.jpg"    gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="res/screen/screen-iphone-portrait-2x.jpg" gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/screen/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="res/screen/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
 </widget>

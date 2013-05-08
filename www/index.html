@@ -40,7 +40,10 @@
                     <h5>VERB</h5><p>1. to transform, esp. in a surprising or magical manner.<br>
                     2. to convert measurement units in the blink of an eye.</p>
                     <h5>SYNONYMS</h5><p>transform - alter - change - transmute - convert</p>
-                    <span id="sound"></span>
+                    <audio id="sound">
+                    	<!--<source src="audio/Jake.ogg" type="audio/ogg"/>
+                    	<source src="audio/Jake.mp3" type="audio/mpeg"/>-->
+                    </audio>
                 </div>
             </div>
         </div>
@@ -133,28 +136,36 @@
 		
 		function playSound(soundfile) {
 				 //alert('play sound!');
-				 document.getElementById("sound").innerHTML=
-				 "<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+				 document.getElementById('sound').innerHTML=
+				 "<source src=\""+soundfile+"\" type=\"audio/mpeg\"/>";
+				 ////////"<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+				 document.getElementById('sound').play();
 		}
 		
 		$('#modalMask').on('tap', function(event){
 			event.preventDefault();
+			
+			//////PLAY SOUND//////
 			if($(event.target).is('#pronounciation')) {
 				//play the pronounciation
 				//alert('"Trans·mog·ri·fy"');
+				
+				//playSound();
 				
 				var whichClip=get_random();
 		
 				var clip=new Array(5)
 				 clip[0]="audio/Melissa.mp3";
 				 clip[1]="audio/Jake.mp3";
-				 clip[2]="audio/Shawn.mp3";   
+				 clip[2]="audio/Shawn.mp3";
 				 clip[3]="audio/Mark.mp3";
 			  
 			   alert("play "+clip[whichClip]);
 			   
 				playSound(clip[whichClip]);
 			}
+			
+			
 			else if($(event.target).is('#modalBox')) {
 			}
 			else if($(event.target).is('h4')) {
