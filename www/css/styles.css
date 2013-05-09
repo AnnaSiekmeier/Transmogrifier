@@ -305,11 +305,11 @@
 	}
 	
 	#pronounciation{
-		background:url(../images/phonetic.jpg) no-repeat;
+		background-image:url(../images/phonetic.jpg);
+		background-repeat:no-repeat;
 		width:182px;
 		height:23px;
 		margin-bottom:20px;
-		cursor:pointer;
 	}
 	
 
